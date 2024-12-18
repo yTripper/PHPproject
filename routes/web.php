@@ -26,6 +26,7 @@ Route::get('/auth/logout', [AuthController::class, 'logout']);
 
 //Article
 Route::resource('/article', ArticleController::class)->middleware('auth:sanctum');
+Route::get('/article/{article}', [ArticleController::class, 'show'])->name('article.show')->middleware('saveclick');
 
 //Comment
 Route::controller(CommentController::class)->prefix('/comment')->middleware('auth:sanctum')->group(function(){

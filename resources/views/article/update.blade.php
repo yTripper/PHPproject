@@ -22,17 +22,17 @@
   @csrf
   @method('PUT')
   <div class="mb-3">
-    <label for="date" class="form-label">Date</label>
+    <label for="date" class="form-label">Дата</label>
     <input type="date" class="form-control" id="date" name="date" value="{{ $article->date }}">
   </div>
   <div class="mb-3">
-    <label for="name" class="form-label">Name</label>
+    <label for="name" class="form-label">Имя</label>
     <input type="text" class="form-control" id="name" name="name" value="{{ $article->name }}">
   </div>
   <div class="mb-3">
-    <label for="desc" class="form-label">Description</label>
+    <label for="desc" class="form-label">Описание</label>
     <textarea name="desc" class="form-control" id="desc">{{ $article->desc }}"</textarea>
   </div>
-  <button type="submit" class="btn btn-primary">Update article</button>
+  <button type="submit" class="btn btn-primary">Обновить статью</button>
 </form>
 @endsection

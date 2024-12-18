@@ -7,30 +7,29 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
-use Illuminate\Mail\Mailables\Address;
-use Illuminate\Mail\Mailables\Attachment;
-use App\Models\Comment;
 use Illuminate\Queue\SerializesModels;
 
-class NewCommentMail extends Mailable
+class StatMail extends Mailable
 {
     use Queueable, SerializesModels;
 
     /**
      * Create a new message instance.
      */
-
-    public function __construct(protected Comment $comment, protected $article_name){}
+    public function __construct(public $article_count, public $comment_count)
+    {
+        //
+    }
 
     /**
      * Get the message envelope.
      */
     public function envelope(): Envelope
     {
+        
         return new Envelope(
-            // from: new Address('artem11belo@mail.ru', 'artem'),
             from: env('MAIL_FROM_ADDRESS'),
-            subject: 'New Comment Mail',
+            subject: 'Stat Mail',
         );
     }
 
@@ -40,11 +39,10 @@ class NewCommentMail extends Mailable
     public function content(): Content
     {
         return new Content(
-            markdown: 'mail.comment.snipped',
-            with: [
-                'text_comment'=>$this->comment->desc,
-                'article_name'=>$this->article_name,
-                'url'=>'http://127.0.0.1:3000/comment/'.$this->comment->id.'/accept',
+            markdown: 'mail.stat-shipped',
+            with:[
+                'article_count'=>$this->article_count,
+                'comment_count'=>$this->comment_count,
             ]
         );
     }
@@ -56,8 +54,6 @@ class NewCommentMail extends Mailable
      */
     public function attachments(): array
     {
-        return [
-            Attachment::fromPath(public_path().'/preview.jpg')
-        ];
+        return [];
     }
 }

@@ -11,10 +11,10 @@
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">Date</th>
-      <th scope="col">Name</th>
-      <th scope="col">Description</th>
-      <th scope="col">Author</th>
+      <th scope="col">Дата</th>
+      <th scope="col">Имя</th>
+      <th scope="col">Описание</th>
+      <th scope="col">Автор</th>
     </tr>
   </thead>
   <tbody>

@@ -15,17 +15,17 @@
 <form action="/article" method="POST">
   @csrf
   <div class="mb-3">
-    <label for="date" class="form-label">Date</label>
+    <label for="date" class="form-label">Дата</label>
     <input type="date" class="form-control" id="date" name="date" value="{{ date('Y-m-d') }}">
   </div>
   <div class="mb-3">
-    <label for="name" class="form-label">Name</label>
+    <label for="name" class="form-label">Имя</label>
     <input type="text" class="form-control" id="name" name="name">
   </div>
   <div class="mb-3">
-    <label for="desc" class="form-label">Description</label>
+    <label for="desc" class="form-label">Описание</label>
     <input type="text" class="form-control" id="desc" name="desc">
   </div>
-  <button type="submit" class="btn btn-primary">Save article</button>
+  <button type="submit" class="btn btn-primary">Сохранить статью</button>
 </form>
 @endsection

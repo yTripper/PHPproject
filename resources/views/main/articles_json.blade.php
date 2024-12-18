@@ -3,11 +3,11 @@
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">Date</th>
-      <th scope="col">Name</th>
-      <th scope="col">Shortdesc</th>
-      <th scope="col">Description</th>
-      <th scope="col">Preview image</th>
+      <th scope="col">Дата</th>
+      <th scope="col">Имя</th>
+      <th scope="col">Краткое описание</th>
+      <th scope="col">Описание</th>
+      <th scope="col">Превью изображения</th>
     </tr>
   </thead>
   <tbody>

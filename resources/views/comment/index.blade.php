@@ -12,11 +12,11 @@
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">Date</th>
-      <th scope="col">Name Article</th>
-      <th scope="col">Description</th>
-      <th scope="col">Author</th>
-      <th scope="col">Accept/Reject</th>
+      <th scope="col">Имя</th>
+      <th scope="col">Имя статьи</th>
+      <th scope="col">Описание</th>
+      <th scope="col">Автор</th>
+      <th scope="col">Подтвердить/Отклонить</th>
     </tr>
   </thead>
   <tbody>
@@ -28,9 +28,9 @@
       <td>{{ User::findOrFail($comment->user_id)->name }}</td>
        <td class="text-center">
        @if(!$comment->accept)
-       <a class="btn btn-success" href="/comment/{{$comment->id}}/accept">Accept</a>
+       <a class="btn btn-success" href="/comment/{{$comment->id}}/accept">Подтвердить</a>
       @else
-        <a class="btn btn-warning" href="/comment/{{$comment->id}}/reject">Reject</a></td>
+        <a class="btn btn-warning" href="/comment/{{$comment->id}}/reject">Отклонить</a></td>
       @endif
     </tr>
     @endforeach

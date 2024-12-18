@@ -17,5 +17,5 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
-/PHPPROJECT
-/PHPPROJECT.pub
+/project_key
+/project_key.pub
